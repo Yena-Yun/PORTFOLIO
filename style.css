@@ -404,7 +404,6 @@ p {
 
 .contact__email {
 	font-size: var(--font-regular);
-	text-decoration: underline;
 }
 
 .contact__links {

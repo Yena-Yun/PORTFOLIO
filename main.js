@@ -2,9 +2,7 @@
 
 // navbar가 맨 위에 있을 때는 투명하게 만들기
 const navbar = document.querySelector('#navbar');
-
 const navbarHeight = navbar.getBoundingClientRect().height;
-
 document.addEventListener('scroll', () => {
   if (window.scrollY > navbarHeight) {
     navbar.classList.add('navbar--dark');
@@ -21,7 +19,18 @@ navbarMenu.addEventListener('click', (e) => {
   if (link === null) {
     return;
   }
-  console.log(link);
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
+  scrollIntoView(link);
 });
+
+// navbar 메뉴 클릭 시 해당 section으로 이동할 때 Home이 서서히 투명해지게
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+  home.style.opacity = 1 - window.scrollY / homeHeight;
+});
+
+// navbar 메뉴 클릭 시 해당 section으로 이동할 때 스무스하게 이동 (유틸 함수)
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}
