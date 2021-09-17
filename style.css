@@ -1,0 +1,471 @@
+/* Global */
+:root {
+	/* Color */
+	--color-white: #ffffff;
+	--color-light-white: #eeeeee;
+	--color-dark-white: #bdbdbd;
+	--color-pink: #eb8f90;
+	--color-dark-pink: #ff6863;
+	--color-dark-grey: #4d4d4d;
+	--color-grey: #616161;
+	--color-light-grey: #7c7979;
+	--color-blue: #73aace;
+	--color-yellow: #f8c598;
+	--color-light-yellow: #fff7d1;
+	--color-orange: #feb546;
+	--color-black: #000000;
+	--color-purple: #852bb8;
+
+	/* Font size */
+	--font-large: 40px;
+	--font-medium: 28px;
+	--font-regular: 22px;
+	--font-small: 16px;
+	--font-micro: 14px;
+
+	/* Font weight */
+	--weight-bold: 700;
+	--weight-semi-bold: 600;
+	--weight-regular: 400;
+
+	/* Size */
+	--border-radius: 4px;
+}
+
+/* Universal tags */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	/* body에 구글 웹폰트 적용 */
+	font-family: 'Open Sans',
+		sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: var(--color-white);
+}
+
+ul,
+li {
+	list-style: none;
+	padding: 0;
+}
+
+button {
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+	outline: none;
+}
+
+/* Typography */
+h1 {
+	font-size: var(--font-large);
+	font-weight: var(--weight-bold);
+	color: var(--color-black);
+}
+
+h2 {
+	font-size: var(--font-medium);
+	font-weight: var(--weight-semi-bold);
+	color: var(--color-black);
+	margin: 16px 0;
+}
+
+h3 {
+	font-size: var(--font-regular);
+	font-weight: var(--weight-regular);
+	color: var(--color-black);
+	margin: 8px 0;
+}
+
+p {
+	font-size: var(--font-regular);
+	font-weight: var(--weight-regular);
+	color: var(--color-black);
+}
+
+/* Navbar */
+#navbar {
+	position: fixed;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	background-color: transparent;
+	align-items: center;
+	color: var(--color-white);
+	padding: 12px 32px;
+}
+
+#navbar.navbar--dark {
+	background-color: var(--color-pink);
+	transition: all 300ms ease-in-out;
+}
+
+.navbar__menu {
+	display: flex;
+}
+
+.navbar__logo {
+	font-size: var(--font-medium);
+	font-weight: var(--weight-semi-bold);
+}
+
+.navbar__menu__item {
+	padding: 8px 12px;
+	margin: 0 4px;
+	cursor: pointer;
+	border-radius: var(--border-radius);
+}
+
+.navbar__menu__item.active {
+	border: 1px solid var(--color-white);
+}
+
+.navbar__menu__item:hover {
+	background-color: var(--color-dark-pink);
+}
+
+.navbar__toggle-btn {
+	position: absolute;
+	top: 20px;
+	right: 32px;
+	color: var(--color-white);
+	font-size: var(--font-medium);
+	display: none;
+}
+
+/* Home */
+#home {
+	background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+	padding: 60px 0 36px;
+	padding-top: 120px;
+	text-align: center;
+}
+
+.home__avatar {
+	width: 200px;
+	border-radius: 45%;
+	border: 2px solid var(--color-light-white);
+}
+
+.home__title,
+.home__description {
+	color: var(--color-white);
+}
+
+.home__title {
+	margin-bottom: 50px;
+}
+
+.home__contact p {
+	color: var(--color-white);
+	font-size: var(--font-regular);
+	font-weight: var(--weight-bold);
+}
+
+.home__email {
+	color: var(--color-white);
+	font-size: var(--font-regular);
+	font-weight: var(--weight-bold);
+}
+
+.home__email:hover {
+	text-decoration: underline;
+}
+
+/* Section common */
+.section {
+	padding: 50px;
+	text-align: center;
+	margin: auto;
+}
+
+/* 클래스를 따로 빼서 해당 max-width 속성을 적용하고 싶은 부분에만 적용할 수 있도록 */
+.section__container {
+	max-width: 1200px;
+	/* Skills 왼쪽으로 치우친 거 가운데정렬로 처리 */
+	margin: auto;
+}
+
+/* About */
+.about__majors {
+	display: flex;
+	justify-content: space-between;
+	margin: 80px 0;
+}
+
+.major__icon {
+	width: 280px;
+	height: 280px;
+	/* font-awesome은 font와 동일 */
+	font-size: 100px;
+	/* display: flex 없이 수직가운데정렬 => line-height를 height만큼 주기 */
+	line-height: 280px;
+	/* margin이 한쪽에만 있어서 icon 담는 영역이 한쪽으로 치우쳐 있는 경우 */
+	margin: auto;
+	border: 1px solid var(--color-blue);
+	border-radius: 50%;
+	margin-bottom: 16px;
+
+	/* icon을 담고 있는 영역의 width, height 측정 => 배경색 이용 */
+	/* background-color: yellow; */
+}
+
+.major__icon.react * {
+	color: #61DBFB;
+}
+
+.major__icon.three {
+	font-size: 70px;
+}
+
+.major__icon.three * {
+	display: inline-block;
+}
+
+.major__icon.three .html {
+	color: #0066ff;
+}
+
+.major__icon.three .css {
+	color: #ff4949;
+}
+
+.major__icon.three .js {
+	color: #ffc82c;
+}
+
+.major__title {
+	font-size: var(--font-medium);
+	font-weight: var(--weight-semi-bold);
+	color: var(--color-black);
+	margin: 16px 0;
+}
+
+.major__title,
+.major__description {
+	color: var(--color-dark-grey);
+}
+
+.major__description {
+	font-size: var(--font-small);
+}
+
+.major:first-child>.major__icon:hover {
+	transform: rotate(300deg);
+	transition: all 400ms ease-out;
+}
+
+.major:nth-child(2)>.major__icon:hover>* {
+	transform: scale(1.14);
+	transition: all 300ms ease-in-out;
+
+}
+
+.major:nth-child(3)>.major__icon:hover>* {
+	transform: scale(1.07);
+	color: var(--color-purple);
+	transition: all 350ms ease-in-out;
+}
+
+.about__education {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 20px;
+}
+
+
+.education {
+	display: flex;
+	align-items: center;
+}
+
+.education:first-child {
+	margin-bottom: 16px;
+}
+
+.education__logo {
+	margin-right: 10px;
+}
+
+.school__description {
+	margin-left: 16px;
+	text-align: left;
+}
+
+.school__name,
+.school__period {
+	color: var(--color-light-grey);
+}
+
+.school__name {
+	font-size: var(--font-small);
+	font-weight: var(--weight-semi-bold);
+}
+
+.school__period {
+	font-size: var(--font-micro);
+}
+
+/* Skill */
+#skills {
+	background-color: var(--color-light-yellow);
+}
+
+.skillset {
+	display: flex;
+	background-color: var(--color-light-grey);
+	color: var(--color-light-white);
+	margin: 20px 0;
+}
+
+.skillset__title {
+	color: var(--color-white);
+}
+
+.skillset__left {
+	flex-basis: 60%;
+	background-color: var(--color-dark-grey);
+	padding: 20px 40px;
+}
+
+.skill {
+	margin-bottom: 32px;
+}
+
+.skill__description {
+	display: flex;
+	justify-content: space-between;
+}
+
+.skill__bar {
+	width: 100%;
+	height: 3px;
+	background-color: var(--color-grey);
+}
+
+.skill__value {
+	/* skill_value는 각 skill에 따라 달라지는 부분 - css에서 정의하면 모든 skill이 같은 수치를 갖게됨 -> html에서 inline style로 width를 정의한 후 달라지는 부분은 각각 JSON으로 받아와서 해결 */
+	/* width: 100%; */
+	height: 3px;
+	background-color: var(--color-orange);
+}
+
+.skillset__right {
+	flex-basis: 40%;
+}
+
+.tools {
+	background-color: var(--color-grey);
+}
+
+.tools,
+.etc {
+	padding: 20px;
+}
+
+/* Work */
+.work__categories {
+	margin: 40px;
+}
+
+.category__btn {
+	border: 1px solid var(--color-dark-grey);
+	border-radius: 4px;
+	font-size: var(--font-regular);
+	padding: 8px 48px;
+}
+
+.category__btn.active,
+.category__btn:hover {
+	background: var(--color-pink);
+	color: var(--color-white);
+	transition: all 300ms ease-in-out;
+}
+
+/* Contact */
+#contact {
+	background: var(--color-pink);
+}
+
+.contact__title,
+.contact__phone,
+.contact__email,
+.contact__rights {
+	color: var(--color-white);
+}
+
+.contact__email {
+	font-size: var(--font-regular);
+	text-decoration: underline;
+}
+
+.contact__links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact__links .github {
+	font-size: 70px;
+	margin-right: 28px;
+}
+
+.contact__links .notion img {
+	width: 70px;
+	margin-top: 8px;
+}
+
+.contact__rights {
+	margin-top: 28px;
+	font-size: 14px;
+}
+
+/* 반응형 - 화면이 768px 이하일 때 */
+@media screen and (max-width: 768px) {
+	.navbar__toggle-btn {
+		display: block;
+	}
+
+	#navbar {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.navbar__menu {
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+	}
+
+	.about__majors {
+		flex-direction: column;
+		margin: 40px;
+	}
+
+	.major {
+		margin-bottom: 40px;
+	}
+
+	.major:last-child {
+		margin-bottom: 10px;
+	}
+
+	.about__education {
+		margin-bottom: 40px;
+	}
+
+	.skillset {
+		flex-direction: column;
+	}
+
+	.project {
+		flex-grow: 1;
+	}
+}
