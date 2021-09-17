@@ -22,4 +22,6 @@ navbarMenu.addEventListener('click', (e) => {
     return;
   }
   console.log(link);
+  const scrollTo = document.querySelector(link);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
 });
