@@ -118,7 +118,7 @@ p {
 
 .navbar__menu__item {
 	padding: 8px 12px;
-	margin: 0 4px;
+	margin: 0 6px;
 	cursor: pointer;
 	border-radius: var(--border-radius);
 }
@@ -374,6 +374,7 @@ p {
 /* Work */
 .work__categories {
 	margin: 40px;
+	margin-top: 56px;
 }
 
 .category__btn {
@@ -471,11 +472,18 @@ p {
 
 	.navbar__menu.open {
 		display: block;
+		background-color: var(--color-pink);
+		border-radius: 4px;
+	}
+
+	.navbar__menu__item {
+		margin: 0;
 	}
 
 	.about__majors {
 		flex-direction: column;
 		margin: 40px;
+		margin-bottom: 56px;
 	}
 
 	.major {
