@@ -11,8 +11,9 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// navbar의 메뉴 클릭 시: 해당 section으로 이동 + navbar 메뉴는 사라지게
+// navbar의 메뉴 클릭 시: 해당 section으로 이동 + 반응형 시 navbar 메뉴는 사라지게
 const navbarMenu = document.querySelector('.navbar__menu');
+const navbarMenuItem = document.querySelectorAll('.navbar__menu__item');
 navbarMenu.addEventListener('click', (e) => {
   const target = e.target;
   const link = target.dataset.link;
@@ -21,6 +22,19 @@ navbarMenu.addEventListener('click', (e) => {
   }
   navbarMenu.classList.remove('open');
   scrollIntoView(link);
+});
+
+// navbar 메뉴 클릭 시 선택메뉴에 css 효과 부여하고 다른 메뉴의 효과는 지우기
+function isActive(ulEl, liEl) {
+  // ul(navbarMenu)의 모든 li에서 active 제거
+  // Array.from으로 ul의 자식요소(li)들을 유사배열로 만든 후 forEach를 돌려서 active 클래스 제거
+  Array.from(ulEl.children).forEach((prev) => prev.classList.remove('active'));
+  // 선택된 li(인자로 넘어온 li)에만 active 부여
+  liEl.classList.add('active');
+}
+navbarMenu.addEventListener('click', (e) => {
+  const element = e.target;
+  isActive(navbarMenu, element);
 });
 
 // 768px 미만일 때 navbar 오른쪽의 bar 버튼 누르면 메뉴 나오게 하기
