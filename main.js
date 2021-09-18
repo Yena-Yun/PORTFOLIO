@@ -67,3 +67,34 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+
+// scroll로 이동 시 해당 섹션의 navbar 메뉴 활성화
+// 1. 모든 섹션 요소(section)와 메뉴 아이템(navbar__menu__item) 가지고 오기
+const sectionIds = ['#home', '#about', '#skills', '#work', '#contact'];
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`));
+console.log(sections);
+console.log(navItems);
+
+// 2. IntersectionObserver를 이용해서 모든 섹션들 관찰하기
+// observer 옵션 설정
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.3,
+};
+
+// observer 콜백함수
+// 콜백 안에서 해당하는 섹션을 찾아서 navbar 메뉴 활성화
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    // entry.target: 스크롤 시 section DOM 요소를 받아옴
+    console.log(entry.target);
+  });
+};
+
+// observer 객체 만들기
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+// 각 섹션을 돌면서 observer에게 section을 관찰하라고 시킴
+sections.forEach((section) => observer.observe(section));

@@ -128,10 +128,6 @@ p {
 	border-radius: var(--border-radius);
 }
 
-/* .navbar__menu__item:active {
-	border: 1px solid var(--color-white);
-} */
-
 .navbar__menu__item:hover {
 	background-color: var(--color-dark-pink);
 }
@@ -469,6 +465,7 @@ p {
 		flex-direction: column;
 		align-items: flex-start;
 		padding: 24px 0;
+		background: var(--color-pink);
 	}
 
 	.navbar__logo {
