@@ -11,7 +11,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// navbar 메뉴 클릭 시 해당 section으로 이동
+// navbar의 메뉴 클릭 시: 해당 section으로 이동 + navbar 메뉴는 사라지게
 const navbarMenu = document.querySelector('.navbar__menu');
 navbarMenu.addEventListener('click', (e) => {
   const target = e.target;
@@ -19,10 +19,11 @@ navbarMenu.addEventListener('click', (e) => {
   if (link === null) {
     return;
   }
+  navbarMenu.classList.remove('open');
   scrollIntoView(link);
 });
 
-// navbar 768px 미만일 때 햄버거바 누르면 나오게 하기
+// 768px 미만일 때 navbar의 bar 버튼 누르면 메뉴 나오게 하기
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
