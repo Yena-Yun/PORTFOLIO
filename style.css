@@ -149,7 +149,7 @@ p {
 
 /* Home */
 #home {
-	background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+	background-image: linear-gradient(-145deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 	padding: 60px 0 36px;
 	padding-top: 120px;
 	text-align: center;
