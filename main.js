@@ -23,27 +23,32 @@ navbarMenu.addEventListener('click', (e) => {
   scrollIntoView(link);
 });
 
-// 768px 미만일 때 navbar의 bar 버튼 누르면 메뉴 나오게 하기
+// 768px 미만일 때 navbar 오른쪽의 bar 버튼 누르면 메뉴 나오게 하기
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
   navbarMenu.classList.toggle('open');
 });
 
-// scroll 시 home의 컨텐츠가 서서히 투명해지게
+// scroll 시 home 섹션의 컨텐츠가 서서히 투명해지게
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
-// arrow-up 버튼 누르면 맨 위로 이동
+// home 섹션 절반 정도 scroll했을 때 arrowUp 버튼 나타나게 하기
 const arrowUp = document.querySelector('.arrow-up');
 document.addEventListener('scroll', () => {
   if (window.scrollY > homeHeight / 2) arrowUp.classList.add('visible');
   else arrowUp.classList.remove('visible');
 });
 
-// 특정 section으로 이동할 때 스무스하게 이동 (재활용 가능한 유틸 함수)
+// arrow-up 버튼 누르면 맨 위로 이동
+arrowUp.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
+
+// 특정 섹션으로 이동할 때 스무스하게 이동 (유틸 함수 - 재활용 가능)
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
