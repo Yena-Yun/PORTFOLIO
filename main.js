@@ -62,6 +62,12 @@ arrowUp.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
+// navbar logo 누르면 맨 위로 이동
+const navbarLogo = document.querySelector('.navbar__logo');
+navbarLogo.addEventListener('click', () => {
+  scrollIntoView('#home');
+});
+
 // 특정 섹션으로 이동할 때 스무스하게 이동 (유틸 함수 - 재활용 가능)
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
@@ -73,8 +79,6 @@ function scrollIntoView(selector) {
 const sectionIds = ['#home', '#about', '#skills', '#work', '#contact'];
 const sections = sectionIds.map((id) => document.querySelector(id));
 const navItems = sectionIds.map((id) => document.querySelector(`[data-link="${id}"]`));
-console.log(sections);
-console.log(navItems);
 
 // 2. IntersectionObserver를 이용해서 모든 섹션들 관찰하기
 // observer 옵션 설정
@@ -86,10 +90,32 @@ const observerOptions = {
 
 // observer 콜백함수
 // 콜백 안에서 해당하는 섹션을 찾아서 navbar 메뉴 활성화
+// 기존 선택된 메뉴를 기억하기 위해 selectedNavItem 선언하고 navItems 배열의 맨 첫번째 값으로 초기화
+let selectedNavItem = navItems[0];
 const observerCallback = (entries, observer) => {
   entries.forEach((entry) => {
     // entry.target: 스크롤 시 section DOM 요소를 받아옴
-    console.log(entry.target);
+    // console.log(entry.target);
+
+    if (!entry.isIntersecting) {
+      const index = sectionIds.indexOf(`#${entry.target.id}`);
+      let selectedIndex;
+      // 아래로 스크롤 하면
+      if (entry.boundingClientRect.y < 0) {
+        // 밑에 있던 다음 페이지가 올라옴
+        selectedIndex = index + 1;
+        // 위로 스크롤 하면
+      } else {
+        // 위에 있던 페이지가 아래로 내려감
+        selectedIndex = index - 1;
+      }
+      // 기존 메뉴의 active 지워주고
+      selectedNavItem.classList.remove('active');
+      // 선택된 인덱스의 배열 값을 다시 할당 후
+      selectedNavItem = navItems[selectedIndex];
+      // 선택 메뉴에 active 추가
+      selectedNavItem.classList.add('active');
+    }
   });
 };
 
