@@ -29,6 +29,12 @@ document.addEventListener('scroll', () => {
   home.style.opacity = 1 - window.scrollY / homeHeight;
 });
 
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+  if (window.scrollY > homeHeight / 2) arrowUp.classList.add('visible');
+  else arrowUp.classList.remove('visible');
+});
+
 // navbar 메뉴 클릭 시 해당 section으로 이동할 때 스무스하게 이동 (유틸 함수)
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
