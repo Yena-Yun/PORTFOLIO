@@ -22,6 +22,12 @@ navbarMenu.addEventListener('click', (e) => {
   scrollIntoView(link);
 });
 
+// navbar 768px 미만일 때 햄버거바 누르면 나오게 하기
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('open');
+});
+
 // scroll 시 home의 컨텐츠가 서서히 투명해지게
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
