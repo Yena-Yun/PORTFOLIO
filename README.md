@@ -8,11 +8,11 @@
 5. Projects
 6. Contact
 
-# 어려웠던 점
+## 어려웠던 점
 
 navbar의 각 메뉴 선택 시 선택요소만 css 변경(class 변경)
 
-## 첫 번째 코드
+### 첫 번째 코드
 
 선택된 메뉴에 css가 들어갔지만 다른 메뉴를 클릭했을 때 기존 메뉴 효과가 사라지지 않음
 
@@ -30,7 +30,7 @@ for (let i = 0; i < navbarMenuItem.length; i++) {
 }
 ```
 
-## 두 번째 코드 (해결)
+### 두 번째 코드 (해결)
 
 출처: [https://ddorang-d.tistory.com/122](https://ddorang-d.tistory.com/122)
 
@@ -54,7 +54,7 @@ navbarMenu.addEventListener('click', (e) => {
 });
 ```
 
-# 참고 코드
+## 참고 코드
 
 ### ArrowUp 버튼 - 보여주기 애니메이션
 
