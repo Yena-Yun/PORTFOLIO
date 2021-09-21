@@ -58,10 +58,11 @@ navbarMenu.addEventListener('click', (e) => {
 
 ### ArrowUp 버튼 - 보여주기 애니메이션
 
-display: none ⇒ 요소를 완전히 없어지게 하지만 transition 애니메이션을 줄 수 없음
-opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 (button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
+display: none ⇒ 요소를 완전히 없어지게 하지만 transition 애니메이션을 줄 수 없음 <br/>
+opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 <br/>
+(button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
 
-⇒ opacity로 애니메이션을 주되 pointer-events: none; 속성을 같이 주면 해결 
+⇒ opacity로 애니메이션을 주되 pointer-events: none; 속성을 같이 주면 해결 <br/>
 (.visible이 있어서 보일 때는 pointer-events: auto로 바꿔주기)
 
 ```jsx
@@ -77,7 +78,8 @@ opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능�
 }
 ```
 
-opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 (button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
+opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 <br/>
+(button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
 
 ⇒ opacity로 애니메이션을 주되 pointer-events: none; 속성을 같이 주면 해결 
 
