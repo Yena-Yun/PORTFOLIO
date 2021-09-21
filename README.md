@@ -54,7 +54,7 @@ navbarMenu.addEventListener('click', (e) => {
 });
 ```
 
-## 참고 코드
+## 새로 알게 된 점
 
 ### ArrowUp 버튼 - 보여주기 애니메이션
 
