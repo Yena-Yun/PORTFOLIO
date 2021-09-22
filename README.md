@@ -1,99 +1,22 @@
 # PORTFOLIO
 
+## 소개
+리액트 프론트엔드 개발자를 준비하는 윤예나입니다.
+자기 성장에 대한 갈증을 해소할 수 있는 직업을 갖기 위해 개발 공부를 시작하였습니다. 
+전문성을 쌓기 위해 노력하고 다른 사람들과 기꺼이 배운 내용을 공유하는 개발자가 되고자 합니다.
+
 ## 구성
-1. Interactive Navbar
+1. Navbar
+	+ 메뉴 클릭 시 해당 section으로 이동 (scrollIntoView)
+	+ 각 section으로 스크롤할 때마다 navbar에 인터랙티브한 효과 부여
 2. Home
+	+ 프로필 사진과 간단한 소개
 3. About
+	+ 사용하는 기술과 education
 4. Skills
+	+ 기술별 숙련도와 추가로 사용하는 Tool 및 기록장소
 5. Projects
+	+ 유튜브 클론코딩 (HTML, CSS, JS)
+	+ 가계부 (React)
 6. Contact
-
-## 어려웠던 점
-
-navbar의 각 메뉴 선택 시 선택요소만 css 변경(class 변경)
-
-### 첫 번째 코드
-
-선택된 메뉴에 css가 들어갔지만 다른 메뉴를 클릭했을 때 기존 메뉴 효과가 사라지지 않음
-
-```jsx
-for (let i = 0; i < navbarMenuItem.length; i++) {
-  navbarMenuItem[i].addEventListener('click', (e) => {
-    let element = e.target;
-    element.classList.add('active');
-  });
-
-	// 이 코드 2줄은 작동하지 않음
-  if (navbarMenuItem[i].classList.contains('active')) {
-    navbarMenuItem[i].classList.remove('active');
-  }
-}
-```
-
-### 두 번째 코드 (해결)
-
-출처: [https://ddorang-d.tistory.com/122](https://ddorang-d.tistory.com/122)
-
-```jsx
-function isActive(ulEl, liEl) {
-  // ul(navbarMenu)의 모든 li에서 active 제거하기
-  // Array.from으로 ul의 자식요소(li)들을 유사배열로 만든 후 
-	// forEach를 돌려서 active 클래스 제거
-  Array.from(ulEl.children).forEach((prev) => prev.classList.remove('active'));
-
-  // 선택된 메뉴에만 active 부여
-	// (전체를 먼저 처리한 후 부분적인 요소 처리)
-  liEl.classList.add('active');
-}
-
-// ul에 클릭이벤트 부여
-navbarMenu.addEventListener('click', (e) => {
-  const element = e.target;
-	// 선택한 메뉴를 ul(기존 active 제거용)과 함께 isActive 함수에 넣어주기
-  isActive(navbarMenu, element);
-});
-```
-
-## 새로 알게 된 점
-
-### ArrowUp 버튼 - 보여주기 애니메이션
-
-display: none ⇒ 요소를 완전히 없어지게 하지만 transition 애니메이션을 줄 수 없음 <br/>
-opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 <br/>
-(button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
-
-⇒ opacity로 애니메이션을 주되 pointer-events: none; 속성을 같이 주면 해결 <br/>
-(.visible이 있어서 보일 때는 pointer-events: auto로 바꿔주기)
-
-```jsx
-.arrow-up {
-	opacity: 0;
-	transition: opacity 300ms ease-in;
-	pointer-events: none;
-}
-
-.arrow-up.visible {
-	opacity: 1;
-	pointer-events: auto;
-}
-```
-
-opacity: 0 ⇒ 애니메이션은 가능하지만 사용자가 클릭이 가능함 <br/>
-(button에 cursor: pointer가 적용되어 있을 경우 눈에 안 보여도 hover 시 커서 나타남)
-
-⇒ opacity로 애니메이션을 주되 pointer-events: none; 속성을 같이 주면 해결 
-
-(.visible이 있어서 보일 때는 pointer-events: auto로 바꿔주기)
-
-```jsx
-.arrow-up {
-	opacity: 0;
-	transition: opacity 300ms ease-in;
-	pointer-events: none;
-}
-
-.arrow-up.visible {
-	opacity: 1;
-	pointer-events: auto;
-}
-```
+	+ 전화번호, 이메일, 깃허브 및 노션 링크
