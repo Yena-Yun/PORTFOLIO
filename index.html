@@ -15,18 +15,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-	<!-- defer 추가하면 script 태그를 head에 써도 됨 -->
+	<!-- defer 추가 시 head에 script 태그 작성 가능 -->
 	<script src="main.js" defer></script>
-	<title>Hello I'm Cheryl🍁</title>
+	<title>Hello I'm Cheryl!</title>
 </head>
 
 <body>
-	<!-- CSS에서 Typography 정할 때 확인해가면서 하기 -->
-	<!-- <h1>Heading</h1>
-	<h2>Heading</h2>
-	<h3>Heading</h3>
-	<p>Paragraph</p> -->
-
 	<!-- Navbar -->
 	<nav id="navbar">
 		<div class="navbar__logo">
@@ -193,18 +187,27 @@
 	<!-- Work -->
 	<section id="work" class="section">
 		<h1>Projects</h1>
-		<div class="work__categories">
-			<button class="category__btn">All</button>
-			<button class="category__btn">HTML, CSS, JS</button>
-			<button class="category__btn">React</button>
-		</div>
 
 		<div class="work__projects">
-			<a href="https://github.com/Yena-Yun/Twitter-markup-challenge" class="project" target="_blank">
-				<img class="project__img" src="/imgs/projects/Tweeter-markup.png" alt="Tweeter">
-			</a>
-			<div class="project__description">
-				<h3>Tweeter Markup</h3>
+			<div class="project youtube">
+				<div class="project__img">
+					<a href="https://yena-yun.github.io/Youtube-clone-deploy/" class="project" target="_blank">
+						<img src="/imgs/projects/youtube-desktop.png" alt="Youtube-clone">
+					</a>
+				</div>
+				<div class="project__description">
+					<p>유튜브 클론코딩(HTML/CSS/JS)</p>
+				</div>
+			</div>
+			<div class="project household">
+				<div class="project__img">
+					<a href="https://yena-yun.github.io/Household/" class="project" target="_blank">
+						<img src="/imgs/projects/household-pic.png" alt="household">
+					</a>
+				</div>
+				<div class="project__description">
+					<p>가계부(React)</p>
+				</div>
 			</div>
 		</div>
 	</section>
