@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+		integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous">
+	</script>
+	<meta name="description" content="A Would-be Frontend Engineer Cheryl">
+	<meta name="author" content="Cheryl Yena Yun">
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" type="image/png" href="imgs/fan-solid (3).png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+	<!-- defer 추가 시 head에 script 태그 작성 가능 -->
+	<script src="main.js" defer></script>
+	<title>Hello I'm Cheryl!</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<nav id="navbar">
+		<div class="navbar__logo">
+			<i class="fas fa-fan"></i>
+			Yena Yun
+		</div>
+		<ul class="navbar__menu">
+			<li class="navbar__menu__item" data-link="#home">Home</li>
+			<li class="navbar__menu__item" data-link="#about">About</li>
+			<li class="navbar__menu__item" data-link="#skills">Skills</li>
+			<li class="navbar__menu__item" data-link="#work">Projects</li>
+			<li class="navbar__menu__item" data-link="#contact">Contact</li>
+		</ul>
+		<!-- Toggle button -->
+		<button class="navbar__toggle-btn">
+			<i class="fas fa-bars"></i>
+		</button>
+	</nav>
+
+	<!-- Home -->
+	<section id="home">
+		<div class="home__container">
+			<div class="home__profile">
+				<a href="https://github.com/Yena-Yun" target="_blank">
+					<img src="imgs/profile.png" alt="profile-image" class="home__avatar" />
+				</a>
+			</div>
+			<h1 class="home__title">기록과 성장을 좋아하는 개발자,<br /> 윤예나입니다</h1>
+
+			<div class="home__contact">
+				<p>010 - 8484 - 2528</p>
+				<p><a href="mailto:cheryleduart@gmail.com" target="_blank">
+						<button class="home__email">
+							cheryleduart@gmail.com
+							<i class="fas fa-external-link-alt"></i>
+						</button>
+					</a>
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- About -->
+	<!-- About은 내용이 1200px 이상 늘어나면 안되므로 section__container(css용) 사용 -->
+	<section id="about" class="section section__container">
+		<h1>About me</h1>
+		<div class="about__majors">
+			<div class="major">
+				<div class="major__icon react">
+					<i class="fab fa-react"></i>
+				</div>
+				<div class="major__title">React</div>
+				<div class="major__description">styled-components, <br />redux, Ant Design</div>
+			</div>
+			<div class="major">
+				<div class="major__icon three">
+					<div class="html">
+						<i class="fab fa-html5"></i>
+					</div>
+					<div class="css">
+						<i class="fab fa-css3-alt"></i>
+					</div>
+					<div class="js">
+						<i class="fab fa-js"></i>
+					</div>
+				</div>
+				<div class="major__title">HTML5, CSS3, Javascript</div>
+				<div class="major__description">BEM, SCSS, JS Algorithm</div>
+			</div>
+			<div class="major">
+				<div class="major__icon github">
+					<i class="fab fa-github"></i>
+				</div>
+				<div class="major__title">Github, Notion</div>
+			</div>
+		</div>
+		<div class="about__education">
+			<div class="education">
+				<div class="school__logo">
+					<img src="./imgs/school/cau_logo.png" alt="ChungAng-University">
+				</div>
+				<div class="school__description">
+					<div class="school__name">중앙대학교 영어교육과</div>
+					<div class="school__period">2010.03. - 2014.08.</div>
+				</div>
+			</div>
+			<div class="education">
+				<div class="education__logo">
+					<img src="./imgs/school/항해99_logo.png" alt="Hanghae99-BootCamp">
+				</div>
+				<div class="school__description">
+					<div class="school__name">항해 99 - 스파르타 코딩클럽 부트캠프</div>
+					<div class="school__period">2021.03. - 2021.06.</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Skills -->
+	<section id="skills" class="section">
+		<!-- Skills는 내용만 1200px까지 늘어나고 바깥쪽을 두르는 노란색 박스는 반응형으로 크기조절이 되어야 하므로 내용을 감싸는 section__container용 div를 하나 더 만든다 -->
+		<div class="section__container">
+			<h1>Skills</h1>
+			<div class="skillset">
+				<div class="skillset__left">
+					<h2 class="skillset__title">Skills</h2>
+					<div class="skill">
+						<div class="skill__description">
+							<span>HTML</span>
+							<span>97%</span>
+						</div>
+						<div class="skill__bar">
+							<div class="skill__value" style="width: 97%;"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<div class="skill__description">
+							<span>CSS</span>
+							<span>92%</span>
+						</div>
+						<div class="skill__bar">
+							<div class="skill__value" style="width: 92%;"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<div class="skill__description">
+							<span>JavaScript</span>
+							<span>87%</span>
+						</div>
+						<div class="skill__bar">
+							<div class="skill__value" style="width: 87%;"></div>
+						</div>
+					</div>
+					<div class="skill">
+						<div class="skill__description">
+							<span>React</span>
+							<span>87%</span>
+						</div>
+						<div class="skill__bar">
+							<div class="skill__value" style="width: 87%;"></div>
+						</div>
+					</div>
+				</div>
+				<div class="skillset__right">
+					<div class="tools">
+						<h2 class="skillset__title">Tools</h2>
+						<ul class="tools__list">
+							<li><span>VS Code</span></li>
+							<li><span>Figma</span></li>
+						</ul>
+					</div>
+					<div class="etc">
+						<h2 class="skillset__title">Etc.</h2>
+						<ul class="etc__list">
+							<li><span>Git</span></li>
+							<li><span>Notion</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Work -->
+	<section id="work" class="section">
+		<h1>Projects</h1>
+
+		<div class="work__projects">
+			<div class="project youtube">
+				<div class="project__img">
+					<a href="https://yena-yun.github.io/Youtube-clone-deploy/" class="project" target="_blank">
+						<img src="/imgs/projects/youtube-desktop.png" alt="Youtube-clone">
+					</a>
+				</div>
+				<div class="project__description">
+					<p>유튜브 클론코딩(HTML/CSS/JS)</p>
+				</div>
+			</div>
+			<div class="project household">
+				<div class="project__img">
+					<a href="https://yena-yun.github.io/Household/" class="project" target="_blank">
+						<img src="/imgs/projects/household-pic.png" alt="household">
+					</a>
+				</div>
+				<div class="project__description">
+					<p>가계부(React)</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section id="contact" class="section">
+		<h1 class="contact__title">How to Reach me</h1>
+		<p class="contact__phone">010 - 8484 - 2528</p>
+		<p>
+			<a href="mailto:cheryleduart@gmail.com" target="_blank">
+				<button class="contact__email">
+					cheryleduart@gmail.com
+					<i class="fas fa-external-link-alt"></i>
+				</button>
+			</a>
+		</p>
+		<div class="contact__links">
+			<a class="github" href="https://github.com/Yena-Yun" target="_blank">
+				<i class="fab fa-github"></i>
+			</a>
+			<a class="notion" href="https://www.notion.so/e065b94c06ce4b6b988aa5ad1c553311?v=63f57afe75424362821a46c6f8cb1646"
+				target="_blank">
+				<img src="./imgs/white_notion_logo.png" alt="notion-logo">
+			</a>
+		</div>
+		<p class="contact__rights">2021 Cheryl Yena Yun - All rights reserved</p>
+	</section>
+
+	<!-- Arrow up Button -->
+	<button class="arrow-up">
+		<i class="fas fa-arrow-up"></i>
+	</button>
+</body>
+
+</html>
