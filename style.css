@@ -170,19 +170,13 @@ p {
 	margin-bottom: 50px;
 }
 
-.home__contact p {
+.home__contact button {
 	color: var(--color-white);
 	font-size: var(--font-regular);
 	font-weight: var(--weight-bold);
 }
 
-.home__email {
-	color: var(--color-white);
-	font-size: var(--font-regular);
-	font-weight: var(--weight-bold);
-}
-
-.home__email:hover {
+.home__contact button:hover {
 	text-decoration: underline;
 }
 
